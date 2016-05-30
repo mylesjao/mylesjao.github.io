@@ -1,22 +1,14 @@
 <!doctype html>
 <html>
     <body>
-        <script type="text/javascript">
-            function handleClick(e) {
-              e.stopPropagation();
-              console.log("clicked !!");
-              var close = parent && parent.closeAd;
-              if(close) close();
-            }
-            var closeBtnElement = document.createElement('img');
-            closeBtnElement.src = 'http://mylesjao.github.io/closebtn.png';
-            closeBtnElement.style.position = 'fixed';
-            closeBtnElement.style.left = '0px';
-            closeBtnElement.style.top = '0px';
-            closeBtnElement.style.cursor = 'pointer';
-            closeBtnElement.style.zIndex = '99999';
-            closeBtnElement.addEventListener('click', handleClick, false);
-            document.body.appendChild(closeBtnElement);
-        </script>
+        <iframe id="ad" src="ad.html" width="600" height="500">
+        <p>Your browser does not support iframes.</p>
+        </iframe>
     </body>
+    <script type="text/javascript">
+      window.closeAd = function() {
+        var ad = document.getElementById("ad");
+        if(ad) document.body.removeChild(ad);
+      }
+    </script>
 </html>

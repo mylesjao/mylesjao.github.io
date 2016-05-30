@@ -5,7 +5,7 @@
             function handleClick(e) {
               e.stopPropagation();
               console.log("clicked !!");
-              val close = parent && parent.closeAd;
+              var close = parent && parent.closeAd;
               if(close) close();
             }
             var closeBtnElement = document.createElement('img');

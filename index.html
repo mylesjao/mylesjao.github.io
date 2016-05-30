@@ -5,6 +5,8 @@
             function handleClick(e) {
               e.stopPropagation();
               console.log("clicked !!")
+              val close = parent && parent.closeAd;
+              if(close) close();
             }
             var closeBtnElement = document.createElement('img');
             closeBtnElement.src = 'http://mylesjao.github.io/closebtn.png';
